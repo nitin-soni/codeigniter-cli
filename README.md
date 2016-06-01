@@ -8,23 +8,31 @@ This package includes some basic commands and will supported for HMVC in near fu
 
 For creating this package i used [Symfony 2 Console Component] https://github.com/symfony/console
 
-## Included Commands
+## Available Commands
 
 ~~~
-generate migration ... Generates migration file skeleton.
-migrate            ... Run migrations.
-migrate status     ... List all migration files and versions.
-seed               ... Seed the database.
-run                ... Run controller.
+codeigniter:clear:cache        Clear all cache
+codeigniter:clear:logs         Clear all logs
+codeigniter:create:controller  Create a new controller
+codeigniter:list:controllers   List all controllers
+codeigniter:list:helpers       List all models
+codeigniter:list:libraries     List all libraries
+codeigniter:list:models        List all models             
+
+
+(Under Development)
+hmvc:module:create             Create a new module
+hmvc:module:list               List all modules
+
 ~~~
 
-## Folder Structure
+## Directory Structure
 
 ```
 codeigniter/
 ├── application/
-├── ci_instance.php ... script to generate CodeIgniter instance
-├── cli             ... command file
+├── console.php     ... script to run the console tool
+├── commnds         ... command file
 ├── config/         ... config folder
 └── vendor/
 ```
@@ -34,5 +42,3 @@ codeigniter/
 * PHP 5.4.0 or later
 * `composer` command
 * Git
-
-## Installation
