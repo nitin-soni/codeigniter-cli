@@ -20,7 +20,7 @@ codeigniter:list:libraries     List all libraries
 codeigniter:list:models        List all models             
 
 
-(Under Development)
+##(Under Development)
 hmvc:module:create             Create a new module
 hmvc:module:list               List all modules
 
