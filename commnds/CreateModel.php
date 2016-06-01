@@ -9,19 +9,19 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 
 /**
- * Description of CreateController
+ * Description of CreateModel
  *
  * @author Nitin Kumar Soni <soninitin27@gmail.com>
  */
-class CreateController extends Command
+class CreateModel extends Command
 {
 
     protected function configure()
     {
-        $this->setName('codeigniter:create:controller')
-                ->setDescription('Create a new controller')
+        $this->setName('codeigniter:create:model')
+                ->setDescription('Create a new model')
                 ->setHelp(<<<EOT
-The <info>%command.name%</info> command will create a new controller under your application/controllers dir.
+The <info>%command.name%</info> command will create a new model under your application/models dir.
 EOT
         );
     }
@@ -29,9 +29,9 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         //$questionHelper = $this->getQuestionHelper();
-        $file_dir = APPPATH . 'controllers/';
+        $file_dir = APPPATH . 'models/';
         $helper = $this->getHelper('question');
-        $question = new Question('<info>Please enter the name of the controller </info>');
+        $question = new Question('<info>Please enter the name of the model </info>');
         $file_name = $helper->ask($input, $output, $question);
         //validate class name
         $class_name = ucfirst(strtolower($file_name));
@@ -51,14 +51,14 @@ EOT
             if ($confirmation)
             {
                 $code_generator = new CodeGenerator();
-                $file = $code_generator->create_file($file_name, 'controller');
+                $file = $code_generator->create_file($file_name, 'model');
                 if ($file === FALSE)
                 {
                     $output->writeln('<error>Some error occured. Please check you have sufficient permissions to write file.</error>');
                 }
                 else
                 {
-                    $output->writeln('<info>Controller created successfully.</info>');
+                    $output->writeln('<info>Model created successfully.</info>');
                 }
             }
         }
